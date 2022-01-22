@@ -34,6 +34,8 @@ public:
 
 
 // Another intresting approch
+
+// Reference: https://blogs.asarkar.com/assets/docs/algorithms-curated/Subarray%20Sums%20-%20Stanford.pdf
 /*
 In this approch we find the contribution of each element in th TOTAL_SUM.
 Consider the subarray contains A[i], we can take 0,1,2,3,... i elements on the left, from A[0] to A[i],
