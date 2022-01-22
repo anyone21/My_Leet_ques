@@ -62,5 +62,5 @@ public:
 };
 
 
-// CODE -2 (optimized aprroch)
+// CODE -2 (optimized approch)
 
