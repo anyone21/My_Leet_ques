@@ -55,4 +55,30 @@ public:
 };
 
 
-// 
+// using the sliding window approch
+// o(1)
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        
+        
+        int count = 0;
+        int left = 0;
+        int n = nums.size();
+        int tempP = 1;
+        
+        if(k<=1){
+            return 0;
+        }
+        for(int right = 0;right<n;right++){
+            tempP *= nums[right];
+            while(tempP>=k){
+                tempP /= nums[left++];
+            }
+            count += right-left+1;
+        }
+        
+        return count;
+        
+    }
+};
