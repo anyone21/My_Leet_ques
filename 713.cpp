@@ -28,4 +28,31 @@ public:
     }
 };
 
+// Another brute force approch
+class Solution {
+public:
+    int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+        // Approch-2
+        // Here we find total subarray whose product >= k
+        
+        int count = 0;
+        int n = nums.size();
+        int total = (n*(n+1))/2;
+        
+        for(int i= 0;i<n;i++){
+            int temp = 1;
+            for(int j = i;j<n;j++){
+                temp *= nums[j];
+                if(temp>=k){
+                    count+= (n-j);
+                    break;
+                }
+            }
+        }
+        
+        return total-count;
+    }
+};
+
+
 // 
