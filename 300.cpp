@@ -87,3 +87,5 @@ public:
     }
 };
 
+// approch-3 
+// Using binary search
