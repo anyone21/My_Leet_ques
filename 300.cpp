@@ -89,3 +89,5 @@ public:
 
 // approch-3 
 // Using binary search
+// This prblem might be think in direction of binary search because lot Longest increasing subsequence which is formed is the combination of lot of small increasing subsequences
+
