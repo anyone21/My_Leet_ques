@@ -87,6 +87,33 @@ public:
     }
 };
 
+// O(n^2) approch
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> d(n,1);
+        
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<i;j++){
+                if(nums[j]<nums[i]){
+                    d[i] = max(d[i],d[j]+1);
+                }
+            }
+        }
+        
+        // finding the maximum in d
+        int result = d[0];
+        for(auto i:d){
+            if(i>result){
+                result = i;
+            }
+        }
+        
+        return result;
+    }
+};
+
 // approch-3 
 // Using binary search
 // This prblem might be think in direction of binary search because lot Longest increasing subsequence which is formed is the combination of lot of small increasing subsequences
