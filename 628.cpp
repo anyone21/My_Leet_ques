@@ -110,3 +110,8 @@ public:
         return max(maxP,minP);
     }
 };
+
+// Above approch is not valid for K elements it only valid for k = 3 elements
+// Above will fail in [-7, -6, 1, 2, 3, 4, 9, 10, 11]
+
+
