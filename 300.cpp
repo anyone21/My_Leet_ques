@@ -88,6 +88,7 @@ public:
 };
 
 // O(n^2) approch
+// This appproch will only return the length of the longest increasing subsequence
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
@@ -113,6 +114,43 @@ public:
         return result;
     }
 };
+
+// Same as above approch in this we will print the sussequence also
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> d(n,1),p(n,-1);
+        
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<i;j++){
+                if(nums[j]<nums[i] && d[i] <d[j]+1){
+                    d[i] = d[j]+1;
+                    p[i] = j;
+                }
+            }
+        }
+        
+        // finding the maximum in d
+        int result = d[0],pos = 0;
+        for(int i = 1;i<n;i++{
+            if(d[i]>result){
+                result = d[i];
+                pos = i;
+            }
+        }
+        
+        vector<int> subseq;
+        while(pos!=-1){
+            subseq.push_back(nums[pos]);
+            pos = p[pos];
+        }
+            reverse(subseq.begin(),subseq.end());
+        return result;
+    }
+};
+
+            
 
 // approch-3 
 // Using binary search
